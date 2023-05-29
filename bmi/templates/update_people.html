@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}
+BMI System- Update data
+{% endblock %}
+
+
+{% block headline %}
+Updating {{p.pname}}
+{% endblock %}
+
+{% block content %}
+
+<!-- BUG: no field name specified. Please add the Name -->
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <label for="pname">Name: </label><br>
+    <input type="text" id="pname" value="{{ p.pname }}" readonly><br>
+
+    <label for="weight">Weight: </label><br>
+    <input type="number" id="weight" value={{ p.w }}><br>
+
+    <label for="weight">Height: </label><br>
+    <input type="number" id="height" value={{ p.h }}><br>
+
+    <br><br>
+    <input type="submit" value="Update">
+</form>
+
+{% endblock %}
