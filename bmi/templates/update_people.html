@@ -5,18 +5,10 @@ BMI System- Update data
 {% endblock %}
 
 {% block extraCSS %}
-<style>
-    /* label,
-    input,
-    submit {
-        display: block;
-        margin: 5px;
-    } */
-</style>
 {% endblock %}
 
 {% block headline %}
-Updating <span class="text-primary"> {{p.pname}} </span>
+Updating <span class="text-primary"> {{form.pname.value}} </span>
 {% endblock %}
 
 {% block content %}
@@ -24,24 +16,22 @@ Updating <span class="text-primary"> {{p.pname}} </span>
 <form action="" method="POST">
     {% csrf_token %}
     <div class="mb-3">
-        <div class="mb-1">
-            <label class="form-label" for="pname">Name: </label>
-            <input class="form-control" type="text" id="pname" name="pname" value="{{ p.pname }}" readonly>
-        </div>
-
-        <div class="mb-1">
-            <label class="form-label" for="weight">Weight: </label>
-            <input class="form-control" type="number" id="weight" name="w" value={{ p.w }}>
-        </div>
-
-        <div class="mb-1">
-            <label class="form-label" for="weight">Height: </label>
-            <input class="form-control" type="number" id="height" name="h" value={{ p.h }}>
-        </div>
+        {{ form.as_table }}
     </div>
 
     <input class="btn btn-primary" type="submit" value="Update">
-
 </form>
 
 {% endblock %}
+
+<!-- <form action="" method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+        <div class="form-group col-md-6">
+
+            {{ form.as_p }}
+
+            <input class="btn btn-success" type="submit" value="update" />
+        </div>
+    </div>
+</form> -->

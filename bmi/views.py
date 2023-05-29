@@ -48,9 +48,12 @@ def update(request, id):
             print ('form.errors: ', form.errors)
             return render(request, "find_fail.html", {'error_msg': 'ID not found'}) 
     
-    # GET
+    # GET, generate a form and pass to update_people.html
     p = People.objects.get(id=id)
     if p: 
-        return render(request, "update_people.html", {'p': p})
+        form = PeopleModelForm(instance = p)
+    
+        context = {'form':form}     
+        return render(request, "update_people.html", context)
     else:
-        return render(request, "find_fail.html", {'error_msg': 'ID not found'}) 
+        return render(request, "find_fail.html", {'error_msg': 'ID not found'})             

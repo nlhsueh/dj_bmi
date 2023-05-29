@@ -11,6 +11,9 @@ class People(models.Model):
     def __str__(self):
         return self.pname
 
+    class Meta:
+        ordering = ['h']        
+
 
 class Level(models.Model):
     title = models.CharField(max_length=10)
