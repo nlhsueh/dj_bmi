@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}
+BMI System- {{p.pname}}
+{% endblock %}
+
+
+{% block headline %}
+{{p.pname}}
+{% endblock %}
+
+{% block content %}
+
+<div class="clearfix">
+    <img class="big_photo" src="{{p.photo.url}}" width="200">
+
+    <ul>
+        <li> SSN: {{p.ssn}} </li>
+        <li> Name: {{p.pname}}, </li>
+        <li> Height: {{p.h}}, </li>
+        <li> Weight: {{p.w}}, </li>
+        <li> <strong>BMI: {{p.bmi}} </strong></li>
+        </li>
+    </ul>
+</div>
+
+<div class="health_statement">
+    {% if p.bmi > 25 %} {{p.pname}} 體重過重
+    {% elif p.bmi >= 18.5 %} {{p.pname}} 體重正常
+    {% else %} {{p.pname}} 體重太輕
+    {% endif %} {% endblock %} </div>

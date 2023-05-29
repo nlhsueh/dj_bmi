@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}
+BMI System- All people
+{% endblock %}
+
+{% block headline %}
+All People
+{% endblock %}
+
+{% block content %}
+
+<ul>
+    {% for p in plist %}
+    <li> <img src="{{p.photo.url}}" height="40" width="40"> <a href="details/{{p.id}}">{{p.pname}}, {{p.h}}cm,
+            {{p.w}}kg, BMI:
+            {{p.bmi}} </a>
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

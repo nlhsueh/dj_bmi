@@ -1,0 +1,59 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {% block title %} {% endblock %} </title>
+
+    <style>
+        body {
+            width: 500px;
+            margin: auto;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 0px, 20px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .big_photo {
+            float: left;
+            padding-right: 30px;
+        }
+
+        .clearfix::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .health_statement {
+            padding: 20px;
+            text-align: center;
+            font-size: large;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <img src="/media/nba_banner.jpeg" width="100%">
+    <!-- <img src="{{MEDIA_URL}}/nba_banner.jpeg" width="100%"> -->
+
+    <h1> {% block headline %} {% endblock %}</h1>
+
+    {% block content %}
+    {% endblock %}
+
+    <hr>
+
+    <center><a href="/bmi">Back to Home</a></center>
+</body>
+
+</html>
