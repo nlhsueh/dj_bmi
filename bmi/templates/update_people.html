@@ -6,54 +6,42 @@ BMI System- Update data
 
 {% block extraCSS %}
 <style>
-    label,
+    /* label,
     input,
     submit {
         display: block;
         margin: 5px;
-    }
+    } */
 </style>
 {% endblock %}
 
 {% block headline %}
-Updating {{p.pname}}
+Updating <span class="text-primary"> {{p.pname}} </span>
 {% endblock %}
 
 {% block content %}
 
 <form action="" method="POST">
     {% csrf_token %}
-    <fieldset>
-        <label for="pname">Name: </label>
-        <input type="text" id="pname" name="pname" value="{{ p.pname }}" readonly>
+    <div class="mb-3">
+        <div class="mb-1">
+            <label class="form-label" for="pname">Name: </label>
+            <input class="form-control" type="text" id="pname" name="pname" value="{{ p.pname }}" readonly>
+        </div>
 
-        <label for="weight">Weight: </label>
-        <input type="number" id="weight" name="w" value={{ p.w }}>
+        <div class="mb-1">
+            <label class="form-label" for="weight">Weight: </label>
+            <input class="form-control" type="number" id="weight" name="w" value={{ p.w }}>
+        </div>
 
-        <label for="weight">Height: </label>
-        <input type="number" id="height" name="h" value={{ p.h }}>
+        <div class="mb-1">
+            <label class="form-label" for="weight">Height: </label>
+            <input class="form-control" type="number" id="height" name="h" value={{ p.h }}>
+        </div>
+    </div>
 
-        <br>
-        <input type="submit" value="Update">
-    </fieldset>
+    <input class="btn btn-primary" type="submit" value="Update">
+
 </form>
 
 {% endblock %}
-
-<li> <img src="{{p.photo.url}}" height="40" width="40"> <a href="details/{{p.id}}">{{p.pname}}, {{p.h}}cm,
-
-
-        <!DOCTYPE html>
-        <html lang="en">
-
-        <head>
-            <meta charset="UTF-8">
-            <meta http-equiv="X-UA-Compatible" content="IE=edge">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Document</title>
-        </head>
-
-        <body>
-        </body>
-
-        </html>

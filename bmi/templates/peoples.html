@@ -10,12 +10,14 @@ All People
 
 {% block content %}
 
-<ul>
+<ul class="list-group list-group-flush">
     {% for p in plist %}
-    <li> <img src="{{p.photo.url}}" height="40" width="40"> <a href="details/{{p.id}}">{{p.pname}}</a>, {{p.h}}cm,
+    <li class="list-group-item"> <img src="{{p.photo.url}}" height="40" width="40"> <a
+            href="details/{{p.id}}">{{p.pname}}</a>, {{p.h}}cm,
         {{p.w}}kg, BMI: {{p.bmi}}
     </li>
     {% endfor %}
 </ul>
+
 
 {% endblock %}

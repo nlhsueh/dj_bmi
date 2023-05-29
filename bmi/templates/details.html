@@ -6,33 +6,44 @@ BMI System- {{p.pname}}
 
 
 {% block headline %}
-{{p.pname}}
+<!-- {{p.pname}}  -->
 {% endblock %}
 
 {% block content %}
 
-<div class="clearfix">
-    <img class="big_photo" src="{{p.photo.url}}" width="200">
+<div class="card" style="width:300px">
+    <img class="card-img-top" src="{{p.photo.url}}" alt="Card image">
+    <div class="card-body">
+        <h4 class="card-title"> {{p.pname}} </h4>
+        <ul>
+            <li> SSN: {{p.ssn}} </li>
+            <li> Height: {{p.h}} </li>
+            <li> Weight: {{p.w}} </li>
+            <li> <strong>BMI: {{p.bmi}} </strong></li>
+            <li> <a href="/bmi/update/{{p.id}}">Update data</a>
+            </li>
+        </ul>
+        <button type="button" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="right"
+            title="注意飲食均衡，多多運動可以保持體重正常"> {% if p.bmi > 25 %} 體重過重
+            {% elif p.bmi >= 18.5 %} 體重正常
+            {% else %} 體重太輕
+            {% endif %} </button>
 
-    <ul>
-        <li> SSN: {{p.ssn}} </li>
-        <li> Name: {{p.pname}} </li>
-        <li> Height: {{p.h}} </li>
-        <li> Weight: {{p.w}} </li>
-        <li> <strong>BMI: {{p.bmi}} </strong></li>
-        </li>
-    </ul>
+    </div>
 </div>
+<script>
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+</script>
 
-<div class="health_statement">
+
+<!-- <div class="health_statement">
     {% if p.bmi > 25 %} {{p.pname}} 體重過重
     {% elif p.bmi >= 18.5 %} {{p.pname}} 體重正常
     {% else %} {{p.pname}} 體重太輕
     {% endif %}
-
-    <a href="/bmi/update/{{p.id}}">Update data</a>
-</div>
+</div> -->
 
 {% endblock %}
-
-<li> <img src="{{p.photo.url}}" height="40" width="40"> <a href="details/{{p.id}}">{{p.pname}}, {{p.h}}cm,
