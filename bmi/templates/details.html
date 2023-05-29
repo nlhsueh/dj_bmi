@@ -16,9 +16,9 @@ BMI System- {{p.pname}}
 
     <ul>
         <li> SSN: {{p.ssn}} </li>
-        <li> Name: {{p.pname}}, </li>
-        <li> Height: {{p.h}}, </li>
-        <li> Weight: {{p.w}}, </li>
+        <li> Name: {{p.pname}} </li>
+        <li> Height: {{p.h}} </li>
+        <li> Weight: {{p.w}} </li>
         <li> <strong>BMI: {{p.bmi}} </strong></li>
         </li>
     </ul>
@@ -28,4 +28,11 @@ BMI System- {{p.pname}}
     {% if p.bmi > 25 %} {{p.pname}} 體重過重
     {% elif p.bmi >= 18.5 %} {{p.pname}} 體重正常
     {% else %} {{p.pname}} 體重太輕
-    {% endif %} {% endblock %} </div>
+    {% endif %}
+
+    <a href="/bmi/update/{{p.id}}">Update data</a>
+</div>
+
+{% endblock %}
+
+<li> <img src="{{p.photo.url}}" height="40" width="40"> <a href="details/{{p.id}}">{{p.pname}}, {{p.h}}cm,

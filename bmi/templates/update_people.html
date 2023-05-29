@@ -4,6 +4,16 @@
 BMI System- Update data
 {% endblock %}
 
+{% block extraCSS %}
+<style>
+    label,
+    input,
+    submit {
+        display: block;
+        margin: 5px;
+    }
+</style>
+{% endblock %}
 
 {% block headline %}
 Updating {{p.pname}}
@@ -11,21 +21,39 @@ Updating {{p.pname}}
 
 {% block content %}
 
-<!-- BUG: no field name specified. Please add the Name -->
-
 <form action="" method="POST">
     {% csrf_token %}
-    <label for="pname">Name: </label><br>
-    <input type="text" id="pname" value="{{ p.pname }}" readonly><br>
+    <fieldset>
+        <label for="pname">Name: </label>
+        <input type="text" id="pname" name="pname" value="{{ p.pname }}" readonly>
 
-    <label for="weight">Weight: </label><br>
-    <input type="number" id="weight" value={{ p.w }}><br>
+        <label for="weight">Weight: </label>
+        <input type="number" id="weight" name="w" value={{ p.w }}>
 
-    <label for="weight">Height: </label><br>
-    <input type="number" id="height" value={{ p.h }}><br>
+        <label for="weight">Height: </label>
+        <input type="number" id="height" name="h" value={{ p.h }}>
 
-    <br><br>
-    <input type="submit" value="Update">
+        <br>
+        <input type="submit" value="Update">
+    </fieldset>
 </form>
 
 {% endblock %}
+
+<li> <img src="{{p.photo.url}}" height="40" width="40"> <a href="details/{{p.id}}">{{p.pname}}, {{p.h}}cm,
+
+
+        <!DOCTYPE html>
+        <html lang="en">
+
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Document</title>
+        </head>
+
+        <body>
+        </body>
+
+        </html>

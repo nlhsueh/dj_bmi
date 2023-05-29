@@ -12,9 +12,8 @@ All People
 
 <ul>
     {% for p in plist %}
-    <li> <img src="{{p.photo.url}}" height="40" width="40"> <a href="details/{{p.id}}">{{p.pname}}, {{p.h}}cm,
-            {{p.w}}kg, BMI:
-            {{p.bmi}} </a>
+    <li> <img src="{{p.photo.url}}" height="40" width="40"> <a href="details/{{p.id}}">{{p.pname}}</a>, {{p.h}}cm,
+        {{p.w}}kg, BMI: {{p.bmi}}
     </li>
     {% endfor %}
 </ul>
