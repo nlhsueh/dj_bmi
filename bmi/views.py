@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from bmi.models import People, Level
+from .forms import PeopleModelForm
 
 # Create your views here.
 
