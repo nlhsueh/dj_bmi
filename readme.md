@@ -40,5 +40,5 @@ class PeopleModelForm(forms.ModelForm):
 http://127.0.0.1:8000/bmi
 
 http://127.0.0.1:8000/admin
-id: fcu
-pwd: fcu
+* id: fcu
+* pwd: fcu
