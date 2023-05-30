@@ -23,7 +23,7 @@ def home(request):
 def detail(request, id):
     p = People.objects.get(id=id)
     p.bmi = round(p.w/(p.h/100)**2, 2)
-    print('p.photo.url: ', p.photo.url)
+    # print('p.photo.url: ', p.photo.url)
 
     param = {
         'p': p

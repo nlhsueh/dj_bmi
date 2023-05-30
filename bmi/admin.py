@@ -5,7 +5,7 @@ from .models import People, Level
 
 
 class PeopleAdmin(admin.ModelAdmin):
-    list_display = ("pname", "h", "w", "photo")
+    list_display = ("pname", "h", "w")
 
 
 # Register your models here.
