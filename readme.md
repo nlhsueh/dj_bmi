@@ -2,6 +2,8 @@
 
 **update_p** version by nlhsueh@gmail.com
 
+!! 有放一些錯誤讓你來修復，請看程式碼內的註解
+
 ### 新增 update_people.html
 
 * form 的 method 設為  `"POST"`
