@@ -41,7 +41,7 @@ def update(request, id):
             if form.is_valid():
                 form.save()
                 print('form saved')
-                p.bmi = round(p.w/(p.h/100)**2, 2)
+                  # p.bmi = round(p.w/(p.h/100)**2, 2)
                 return render(request, "details.html", {'p': p})
             else:
                 return render(request, "find_fail.html", {'error_msg': str(form.errors)})
