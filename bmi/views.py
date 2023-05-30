@@ -29,3 +29,28 @@ def detail(request, id):
         'p': p
     }
     return render(request, 'details.html', context=param)
+
+
+def update(request, id):
+    # POST
+    if request.method == "POST":
+        p = People.objects.get(id=id)
+        if p:
+            form = PeopleModelForm(request.POST, instance=p)
+            if form.is_valid():
+                form.save()
+                print('form saved')
+                p.bmi = round(p.w/(p.h/100)**2, 2)
+                return render(request, "details.html", {'p': p})
+            else:
+                return render(request, "find_fail.html", {'error_msg': str(form.errors)})
+        else:
+            print('form.errors: ', form.errors)
+            return render(request, "find_fail.html", {'error_msg': 'ID not found'})
+
+    # GET
+    p = People.objects.get(id=id)
+    if p:
+        return render(request, "update_people.html", {'p': p})
+    else:
+        return render(request, "find_fail.html", {'error_msg': 'ID not found'})
