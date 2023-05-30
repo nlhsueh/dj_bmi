@@ -51,8 +51,7 @@ def update(request, id):
     # GET, generate a form and pass to update_people.html
     p = People.objects.get(id=id)
     if p: 
-        form = PeopleModelForm(instance = p)
-    
+        form = PeopleModelForm(instance = p)    
         context = {'form':form}     
         return render(request, "update_people.html", context)
     else:
