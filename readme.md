@@ -1,4 +1,4 @@
-# BMI system for teaching web programming
+# BMI system for learning django
 
 photo version
 
@@ -43,3 +43,10 @@ urlpatterns = [
 ```python
 <img src="{{p.photo.url}}" width="200">
 ```
+
+## Run it
+https://127.0.0.1:8000/bmi
+
+https://127.0.0.1:8000/admin
+id: fcu
+pwd: fcu
