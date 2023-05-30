@@ -6,7 +6,6 @@ class People(models.Model):
     pname = models.CharField(max_length=30, verbose_name='姓名')
     h = models.IntegerField(verbose_name='身高 (公分)')
     w = models.IntegerField(verbose_name='體重 (公斤)')
-    # photo = models.ImageField(upload_to="people/", null=True, blank=True)
 
     def __str__(self):
         return self.pname
